@@ -24,9 +24,8 @@ with open("gazette-index-latest.jsonlines", "r") as f:
             continue
 
         fname = os.path.basename(gazette['archive_url'])
-        parts = [fname, gazette['publication_date'], gazette['issue_title']]
-        entries.append("|".join(parts))
         urls.append(gazette['archive_url'])
+        entries.append('"%s" (%s) %s' % (fname, gazette['publication_date'], gazette['issue_title']))
 
         count += 1
         if count == 10:
