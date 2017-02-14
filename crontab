@@ -1,0 +1,4 @@
+SHELL=/bin/bash
+
+# run every day at 03:10
+10 3 * * * $HOME/saflii-gazettes/refresh-all.sh >> $HOME/saflii-gazettes/reflesh.log 2>&1
