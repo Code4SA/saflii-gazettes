@@ -2,7 +2,7 @@
 
 date
 
-for dir in \
+for name in \
   ZAGovGaz \
   ZAECPrGaz \
   ZAFSPrGaz \
@@ -14,9 +14,10 @@ for dir in \
   ZANWPrGaz \
   ZAWCPrGaz \
   ; do
+  dir=/data/home/saflii/raw/$name
   if [ ! -d $dir ]; then continue; fi
 
-  echo $dir
-  cd /data/home/saflii/raw/$dir
+  echo $name
+  cd $dir
   ./fetch-gazettes.sh
 done
