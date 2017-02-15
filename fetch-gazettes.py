@@ -7,7 +7,6 @@ import os.path
 
 entries = []
 urls = []
-count = 0
 
 
 # what jurisdiction code should we use?
@@ -26,10 +25,6 @@ with open("gazette-index-latest.jsonlines", "r") as f:
         fname = os.path.basename(gazette['archive_url'])
         urls.append(gazette['archive_url'])
         entries.append('"%s" (%s) %s' % (fname, gazette['publication_date'], gazette['issue_title']))
-
-        count += 1
-        if count == 10:
-            break
 
 
 # write the new registry
