@@ -20,6 +20,4 @@ for name in \
   echo $name
   cd $dir
   ./fetch-gazettes.sh
-  cd ..
-  ./build $name
 done
